@@ -2,4 +2,4 @@
 
 ##Correr projecto:
 
-https://paginas.fe.up.pt/~up2013..../path/projeto/store/
+For exampe: https://paginas.fe.up.pt/~up2013..../path/projeto/store/
