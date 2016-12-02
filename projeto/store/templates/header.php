@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Corner Food</title>
+    <title>Corner's Food</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript">
+      
+    </script>
   </head>
   <body>
     <header>
     </header>
-    <div class="background-wrap">
-      <video id="video-bg-elem" preload="auto" autoplay="true" loop="loop" muted="muted">
-        <source src="Cook2.mp4" type="video/mp4">
-        Video not supported
-      </video>
-    </div>
-    <div class="vid-content">
-      <h1>Corner's Food</h1>
-      <p>Find your favourite restaurant</p>
-    </div>
