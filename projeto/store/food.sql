@@ -1,0 +1,35 @@
+CREATE TABLE owner ( 
+id VARCHAR NOT NULL FOREIGN KEY REFERENCES user,
+id_restaurant INTEGER NOT NULL REFERENCES `restaurant` ,
+PRIMARY KEY(id) 
+);
+
+CREATE TABLE reply_review (
+ id INTEGER PRIMARY KEY,
+ comment TEXT,
+ id_review INTEGER FOREIGN KEY REFERENCES review,
+ id_owner VARCHAR FOREIGN KEY REFERENCES owner 
+ );
+ 
+CREATE TABLE restaurant (
+ name TEXT NOT NULL, 
+ description TEXT NOT NULL,
+ localization TEXT,
+ id_owner VARCHAR NOT NULL FOREIGN KEY REFERENCES owner ,
+ id INTEGER, PRIMARY KEY(id)
+ );
+
+ CREATE TABLE review ( 
+ id_rev VARCHAR NOT NULL FOREIGN KEY REFERENCES reviewer,
+ comment TEXT NOT NULL,
+ id_restaurant INTEGER FOREIGN KEY REFERENCES restaurant,
+ id INTEGER PRIMARY KEY
+  );
+
+ CREATE TABLE reviewer ( 
+ id VARCHAR NOT NULL FOREIGN KEY REFERENCES user,
+ PRIMARY KEY(id)  
+ );
+
+ CREATE TABLE user ( username VARCHAR PRIMARY KEY , 
+ password TEXT );
