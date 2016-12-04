@@ -1,6 +1,6 @@
 CREATE TABLE owner ( 
 id VARCHAR NOT NULL FOREIGN KEY REFERENCES user,
-id_restaurant INTEGER NOT NULL REFERENCES `restaurant` ,
+id_restaurant INTEGER NOT NULL REFERENCES restaurant ,
 PRIMARY KEY(id) 
 );
 
