@@ -31,5 +31,9 @@ CREATE TABLE restaurant (
  PRIMARY KEY(id)  
  );
 
- CREATE TABLE user ( username VARCHAR PRIMARY KEY , 
- password TEXT );
+ CREATE TABLE user ( 
+  idUser INTEGER PRIMARY KEY AUTOINCREMENT,
+  username VARCHAR2(100),
+  password VARCHAR2(255),
+  image VARCHAR2(255)
+ );
