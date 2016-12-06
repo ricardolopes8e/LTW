@@ -5,8 +5,8 @@
 
   $restaurant_id = $_GET['restaurant_id'];
 
-  $category = getRestaurant($restaurant_id);
-  $products = getReviewsFromRestaurant($restaurant_id);
+  $restaurant = getRestaurant($restaurant_id);
+  $reviews = getReviewsFromRestaurant($restaurant_id);
 
   include ('templates/header.php');
   include ('templates/list_reviews.php');

@@ -2,7 +2,7 @@
   include_once('config/init.php');
   include_once('database/restaurant.php');
 
-  $categories = getAllCategories();
+  $restaurants = getAllRestaurants();
   
   include ('templates/header.php');
   include ('templates/navigation.php');
