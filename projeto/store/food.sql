@@ -16,6 +16,7 @@ CREATE TABLE restaurant (
  description TEXT NOT NULL,
  localization TEXT,
  id_owner VARCHAR NOT NULL FOREIGN KEY REFERENCES owner ,
+ id_review INTEGER FOREIGN KEY REFERENCES review, 
  id INTEGER, PRIMARY KEY(id)
  );
 

@@ -1,10 +1,10 @@
 <?php
   include_once('config/init.php');
-  include_once('database/category.php');
+  include_once('database/restaurant.php');
   
   $name = trim(strip_tags($_POST['name']));
 
-  createCategory($name);
+  createRestaurant($name);
   
-  header('Location: list_categories.php');  
+  header('Location: list_restaurants.php');  
 ?>

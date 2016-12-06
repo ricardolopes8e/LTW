@@ -1,3 +1,3 @@
 <?php
-  header ('Location: list_categories.php');
+  header ('Location: list_restaurants.php');
 ?>

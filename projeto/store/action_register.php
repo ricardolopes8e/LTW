@@ -7,5 +7,5 @@
 
   createUser($username, $password);
   
-  header('Location: list_categories.php');  
+  header('Location: list_restaurant.php');  
 ?>

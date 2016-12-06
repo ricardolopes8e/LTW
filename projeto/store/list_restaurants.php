@@ -1,6 +1,6 @@
 <?php
   include_once('config/init.php');
-  include_once('database/category.php');
+  include_once('database/restaurant.php');
 
   $categories = getAllCategories();
   
