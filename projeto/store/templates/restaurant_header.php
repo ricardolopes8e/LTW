@@ -4,7 +4,7 @@
         Video not supported
       </video>
   </div>
-  <div class="vid-content">
+  <div class="vid2-content">
     <h1>Corner's Food</h1>
     <p>Find your favourite restaurant</p>
   </div>

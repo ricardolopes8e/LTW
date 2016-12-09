@@ -6,8 +6,8 @@
 
   include ('templates/header.php');
   include ('templates/navigation.php');
-  include ('templates/video_header.php');
-  include ('templates/search_restaurant.php');
+  include ('templates/restaurant_header.php');
+  include ('templates/result_search_restaurant.php');
   //include ('templates/list_categories.php');
   include ('templates/footer.php');
 ?>
