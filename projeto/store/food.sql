@@ -19,7 +19,18 @@ CREATE TABLE restaurant (
  id_review INTEGER FOREIGN KEY REFERENCES review, 
  id INTEGER, PRIMARY KEY(id)
  );
+ 
+ CREATE TABLE image_restaurant (
+	id INTEGER PRIMARY KEY,
+	title VARCHAR NOT NULL,
+	id_restaurant INTEGER
+ )
 
+ CREATE TABLE image_user (
+	id INTEGER PRIMARY KEY,
+	id_user INTEGER FOREIGN KEY REFERENCES user
+ )
+ 
  CREATE TABLE review ( 
  id_rev VARCHAR NOT NULL FOREIGN KEY REFERENCES reviewer,
  comment TEXT NOT NULL,
@@ -36,5 +47,4 @@ CREATE TABLE restaurant (
   idUser INTEGER PRIMARY KEY AUTOINCREMENT,
   username VARCHAR2(100),
   password VARCHAR2(255),
-  image VARCHAR2(255)
  );
