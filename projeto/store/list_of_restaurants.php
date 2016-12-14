@@ -1,13 +1,15 @@
 <?php
   include_once('config/init.php');
   include_once('database/restaurant.php');
+  $name =$_GET['name'];
 
-  $restaurants = getAllRestaurants();
+  $restaurants = getRestaurant_by_name($name);
 
+  $id_rest =getRestaurant_ID($name);
+  $image=getRestaurant_image($id_rest);
   include ('templates/header.php');
   include ('templates/navigation.php');
   include ('templates/restaurant_header.php');
   include ('templates/result_search_restaurant.php');
-  //include ('templates/list_categories.php');
   include ('templates/footer.php');
 ?>

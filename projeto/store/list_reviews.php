@@ -10,5 +10,4 @@
 
   include ('templates/header.php');
   include ('templates/list_reviews.php');
-  include ('templates/footer.php');
 ?>

@@ -23,19 +23,36 @@
     return $stmt->fetchAll();
   }
 
-  function getRestaurant_by_name($restaurant_id) {
-    global $conn;
+    function getRestaurant_by_name($name) {
+      global $conn;
 
-    $stmt = $conn->prepare('SELECT * FROM restaurant WHERE name = ?');
-    $stmt->execute(array($restaurant_id));
-    return $stmt->fetch();
-  }
+      $stmt = $conn->prepare('SELECT * FROM restaurant WHERE name = ?');
+      $stmt->execute(array($name));
+      return $stmt->fetchAll();
+    }
 
-  function createRestaurant($name) {
-    global $conn;
+    function createRestaurant($name,$description,$location) {
+      global $conn;
 
-    $stmt = $conn->prepare('INSERT INTO restaurant VALUES (NULL, ?)');
-    $stmt->execute(array($name));
-    return $stmt->fetch();
-  }
-?>
+      $stmt = $conn->prepare('INSERT INTO restaurant VALUES (?,?,?)');
+      $stmt->execute(array($name,$description,$location));
+      return $stmt->fetch();
+    }
+
+    function getRestaurant_ID($name) {
+      global $conn;
+
+      $stmt = $conn->prepare('SELECT id FROM restaurant WHERE name = ?');
+      $stmt->execute(array($name));
+      return $stmt->fetch();
+    }
+
+    function getReview($id_restaurant, $id_rev) {
+      global $conn;
+
+      $stmt = $conn->prepare('SELECT id FROM restaurant WHERE (id_restaurant = ? and id_rev=?)');
+      $stmt->execute(array($id_restaurant, $id_rev));
+      return $stmt->fetch();
+    }
+
+  ?>

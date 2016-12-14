@@ -1,17 +1,14 @@
-<?php
-<div class="search-form">
-        <form class="restaurante-div" action="" method="get">
-          foreach($getRestaurant_by_name($GET["name"]) as $value)
-          {
-            <div class="restaurant-item">
-              <h3>$value["name"]</h3>
-              <img src="../resources/default.jpg" alt="300x200" width="300" height="200">
-              <p class="introduction">$value["description"]</p>
-              <ul>
-                <li><a href="https://web.fe.up.pt/~arestivo/page/files/exercises/css/noticia1.html">see more</a></li>
-              </ul>
-            </div>
-          }
 
-        </form>
-  </div>
+<div id="titulo_search_restaurantes">
+  <h1>Corner's Food</h1>
+</div>
+  <div id="div-geral">
+    <div class="news-item">
+      <div><h3><?=$restaurant['name']?></h3></div>
+      <div><img src="../resources/default.jpg" alt="300x200" width="300" height="200"> </div>
+      <div><p class="introduction"><?=$restaurant['description']?></p></div>
+      <div><ul>
+        <li><a href="https://web.fe.up.pt/~arestivo/page/files/exercises/css/noticia1.html">see more</a></li>
+      </ul></div>
+      <div class="clear"> </div>
+    </div>
