@@ -1,5 +1,5 @@
 CREATE TABLE owner (
-	idUser VARCHAR NOT REFERENCES user(id) ,
+	idUser VARCHAR NOT NULL REFERENCES user(id) ,
 	id_restaurant INTEGER NOT NULL REFERENCES restaurant(id) ,
 	PRIMARY KEY(idUser, id_restaurant)
 );
