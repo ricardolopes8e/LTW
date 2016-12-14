@@ -1,5 +1,13 @@
-<form action="action_login.php" method="post">
-  <input type="text" placeholder="username" name="username">
-  <input type="password" placeholder="password" name="password">
-  <input type="submit" value="&gt;&gt;">
-</form>
+<section id="login_content">
+	<h2>Log in</h2>
+	<form action="actions/action_login.php" method="POST">
+		<div class="form-input">Username:
+			<input type="text" name="username" id="username" placeholder=" Enter Username">
+		</div>
+		<div class="form-input">Password:
+			<input type="password" name="password" id="password" placeholder="Enter password">
+		</div>
+ 		<input type="submit" name="login" value="Log in" class="submit-button">
+ 		<br><a href="#">Forgot the password?</a>
+	</form>
+</section>
