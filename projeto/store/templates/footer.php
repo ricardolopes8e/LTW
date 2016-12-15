@@ -1,5 +1,5 @@
     <footer>
-      &copy; 2015 &middot; Web Technologies
+      &copy; 2016 &middot; Web Technologies
     </footer>
   </body>
 </html>
