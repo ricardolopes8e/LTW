@@ -3,6 +3,6 @@
   
   include ('templates/header.php');
   include ('templates/video_header.php');
-  include ('templates/register.php');
+  include ('templates/register_template.php');
   include ('templates/footer.php');
 ?>

@@ -1,6 +1,6 @@
 <section id="content">
   <h2>Register</h2>
-  <form action="actions/action_register.php" method="post">
+  <form action="action_register.php" method="post">
     <div class="form-input">Username:
       <input type="text" name="username" id="username" placeholder="Enter username">
     </divl>

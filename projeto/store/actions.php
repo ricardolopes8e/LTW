@@ -24,7 +24,7 @@ switch ($action) {
 		break;
 
 	case 'logOut':
-		include ('actions/action_logout.php');
+		include ('action_logout.php');
 		break;
 
 	case 'changeUserPicture':
