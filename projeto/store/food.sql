@@ -15,7 +15,7 @@ CREATE TABLE reply_review (
 CREATE TABLE restaurant (
 	name VARCHAR(255) NOT NULL,
 	description VARCHAR(255) NOT NULL,
-	localization VARCHAR(255),
+	local VARCHAR(255),
 	id_owner VARCHAR(255) NOT NULL REFERENCES owner(idUser) ,
 	id_review INTEGER REFERENCES review(id),
 	id INTEGER,

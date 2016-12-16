@@ -4,8 +4,17 @@
   
   $name = trim(strip_tags($_POST['name']));
   $description = trim(strip_tags($_POST['description']));
-  $localization = trim(strip_tags($_POST['localization']));
-  createRestaurant($name, $description, $localization);
+  $local = trim(strip_tags($_POST['local']));
+  $imagePath = trim(strip_tags($_POST['imagePath']));
+  $username  = $_SESSION['username']; 
+  
+  global $conn;
+
+      $stmt = $conn->prepare('SELECT id FROM user WHERE username = ?');
+      $stmt->execute(array($username));
+      $id_owner = $stmt->fetch();
+	  
+  createRestaurant($name, $description, $local, $imagePath, $id_owner);
   
   header('Location: list_restaurants.php');  
 ?>

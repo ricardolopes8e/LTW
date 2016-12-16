@@ -31,11 +31,11 @@
       return $stmt->fetchAll();
     }
 
-    function createRestaurant($name,$description,$location) {
+    function createRestaurant($name,$description,$local, $imagePath, $id_owner) {
       global $conn;
 
-      $stmt = $conn->prepare('INSERT INTO restaurant VALUES (?,?,?)');
-      $stmt->execute(array($name,$description,$location));
+      $stmt = $conn->prepare('INSERT INTO restaurant( name, description, local, imagePath, id_owner) VALUES (?,?,?,?,?)');
+      $stmt->execute(array($name,$description,$local, $imagePath, $id_owner));
       return $stmt->fetch();
     }
 

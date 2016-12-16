@@ -28,9 +28,9 @@
 	$restaurant_image = $stmt->execute(array($restaurant));
 	
 	$stmt = $conn->prepare(
-		'SELECT localization FROM restaurant
+		'SELECT local FROM restaurant
 		WHERE id = ?');
-	$restaurant_localization= $stmt->execute(array($restaurant));
+	$restaurant_local= $stmt->execute(array($restaurant));
 	
 	$stmt = $conn->prepare(
 		'SELECT description FROM restaurant
@@ -47,7 +47,7 @@
 		echo "<br>"; 
 		echo $restaurant_description;
 		echo "<br>";
-		echo $restaurant_localization; ?>
+		echo $restaurant_local; ?>
 		
 		<?php include('list_reviews.php?restaurant_id=$restaurant_id')?>
       </li>
