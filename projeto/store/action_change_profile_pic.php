@@ -1,4 +1,8 @@
 <?php
+
+include_once('config/init.php');
+include_once('database/user.php');
+  
 	$currentProfilePic = $_SESSION['image'];
 	$currentUsername = $_SESSION['username'];
 
@@ -19,5 +23,5 @@
 	$_SESSION['image'] = $parsedPicToUpload;
 	session_write_close();
 	
-	echo json_encode(array('result' => 1));
+	echo json_encode(array('result' => 1));  
 ?>

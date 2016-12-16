@@ -1,3 +1,3 @@
 <?php
-  header ('Location: list_restaurants.php');
+  header ('Location: mainpage.php');
 ?>
