@@ -48,12 +48,9 @@ CREATE TABLE restaurant (
  );
  
   INSERT INTO restaurant VALUES('a','desc1','rua a','1','1','1');
-  INSERT INTO restaurant VALUES('b','desc2','rua b','1','1','2');
-  INSERT INTO restaurant VALUES('c','desc3','rua c','1','1','3');
-  INSERT INTO restaurant VALUES('d','desc4','rua d','1','1','4');
-  INSERT INTO restaurant VALUES('e','desc5','rua e','1','1','5');
-  INSERT INTO restaurant VALUES('f','desc6','rua f','1','1','6');
-  INSERT INTO restaurant VALUES('g','desc7','rua g','1','1','7');
-  INSERT INTO restaurant VALUES('h','desc8','rua h','1','1','8');
-  INSERT INTO restaurant VALUES('i','desc9','rua i','1','1','9');
-  INSERT INTO restaurant VALUES('j','desc10','rua j','1','1','10');
+  INSERT INTO restaurant VALUES('b','desc2','rua b','1','2','2');
+  INSERT INTO restaurant VALUES('c','desc3','rua c','1','3','3');
+  INSERT INTO restaurant VALUES('d','desc4','rua d','1','4','4');
+  INSERT INTO restaurant VALUES('e','desc5','rua e','1','5','5');
+  INSERT INTO restaurant VALUES('f','desc6','rua f','1','6','6');
+  

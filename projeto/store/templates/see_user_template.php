@@ -29,13 +29,20 @@
 <section id="see_user">
 	<h2>User</h2>
 	<header>
-		<img id="user_image" src=<?=$imagePath?> alt="userPiture"/>
+		<img id="user_image" src=<?=$imagePath?> alt="userPic"/>
 		<section>
 			Username: <h3 id="username"><?=$user?></h3>
 		</section>
+		<section>
+			First name: <h3 id="firstname"><?=$firstname?></h3>
+		</section>
+		<section>
+			Last name: <h3 id="secondname"><?=$secondname?></h3>
+		</section>
+		<section>
+			Description: <h3 id="description"><?=$description?></h3>
+		</section>
 	</header>
-	<article>
-		<h3>Description: </h3>
-		<p id="userDescription"><?=$description?></p>
-	</article>
+	
+	 <li><a href="mainpage.php">Main Page</a></li>
 </section>

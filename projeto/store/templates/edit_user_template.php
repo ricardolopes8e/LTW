@@ -31,6 +31,13 @@
     </divl>
     <input type="Submit" name="submit" value="Submit" class="submit-button">
    </form>
+   
+    <form action="action_change_description.php" method="post">
+	<div class="form-input">New Description:
+      <input type="text" name="new_description" id="new_description" placeholder="Enter new description">
+    </divl>
+    <input type="Submit" name="submit" value="Submit" class="submit-button">
+   </form>
  
   <form action="action_change_profile_pic.php" method="post" enctype="multipart/form-data">
         <label>New Profile Picture:

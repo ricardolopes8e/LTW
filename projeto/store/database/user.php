@@ -50,67 +50,30 @@
   function change_firstname($new_firstname, $current_firstname){
 	  global $conn; 
 	
-	$stmt = $conn->prepare(
-		'SELECT * FROM user 
-		WHERE firstname = ?');
-	$stmt->execute(array($new_firstname));
-	
-	if ($stmt->fetch()) {
-		$_SESSION['responseContent'] = 'That firstname is already taken.';
-		header('Location: list_restaurants.php');
-		exit();
-	}
-	else {
 		$stmt = $conn->prepare(
 		'UPDATE user SET firstname = ? 
-		WHERE firstname = ?');
-		$stmt->execute(array($new_firstname, $current_firstname));
-	}
+		WHERE username = ?');
+		$stmt->execute(array($new_firstname, $current_username));
+
   }
-  function change_secondname($new_secondname, $current_secondname){
+  function change_secondname($new_secondname, $current_username){
 	  global $conn; 
 	
 		$stmt = $conn->prepare(
-		'SELECT * FROM user 
-		WHERE secondname = ?');
-	$stmt->execute(array($new_secondname));
+		'UPDATE user SET secondname = ? 
+		WHERE username = ?');
+		$stmt->execute(array($new_secondname, $current_username));
 	
-	if ($stmt->fetch()) {
-		$_SESSION['responseContent'] = 'That secondname is already taken.';
-		header('Location: list_restaurants.php');
-		exit();
-	}
-	else {
-		$stmt = $conn->prepare('UPDATE user SET secondname = ? WHERE secondname = ?');
-		$stmt->execute(array($new_secondname, $current_secondname));
-	}  
   }
-  
-  function get_username($username){
-	  
-	  
-	   return ($stmt->fetch())
-  }
- /* function change_password($new_password, $current_password){
-	 global $conn; 
+  function change_description($new_description, $current_username){
+	  global $conn; 
 	
 		$stmt = $conn->prepare(
-		'SELECT * FROM user 
-		WHERE secondname = ?');
-	$stmt->execute(array($new_secondname));
+		'UPDATE user SET description = ? 
+		WHERE username = ?');
+		$stmt->execute(array($new_secondname, $current_username));
 	
-	if ($stmt->fetch()) {
-		$_SESSION['responseContent'] = 'That secondname is already taken.';
-		header('Location: list_restaurants.php');
-		exit();
-	}
-	else {
-		$stmt = $conn->prepare
-		('UPDATE user SET secondname = ? 
-		WHERE secondname = ?');
-		$stmt->execute(array($new_secondname, $current_secondname));
-	}  
-	  
-  }*/
+  }
+
 
 ?>

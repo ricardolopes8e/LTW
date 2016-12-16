@@ -3,19 +3,19 @@
   include_once('database/user.php');
   
 	$current_username = $_SESSION['username'];
-	$new_secondname = $_POST['new_secondname'];
+	$new_description = $_POST['new_description'];
 
-	if ($new_secondname === "") {
+	if ($new_description === "") {
 		//$_SESSION['responseContent'] = 'No secondname specified.';
-		$message = "No secondname specified.";
+		$message = "No description specified.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header('Location: edit_user.php');
 		exit();
 	}
-	change_secondname($new_secondname, $current_username);
+	change_description($new_description, $current_username);
 	
 	//$_SESSION['responseContent'] = 'Edited second name successfully. ';
-	$message = "Edited second name successfully.";
+	$message = "Edited description successfully.";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 	header('Location: mainpage.php');
   	exit();

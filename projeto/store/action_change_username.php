@@ -2,7 +2,6 @@
   include_once('config/init.php');
   include_once('database/user.php');
 
-    //mudar o username
 	$current_username = $_SESSION['username'];
 	$new_username = $_POST['new_username'];
 
@@ -10,7 +9,7 @@
 		//$_SESSION['responseContent'] = 'No username specified.';
 		$message = "No username specified.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-		header('Location: list_restaurants.php');
+		header('Location: edit_user.php');
 		exit();
 	}
 	change_username($new_username, $current_username);
@@ -20,6 +19,6 @@
 /*	$message = "Edited username successfully. ";
 	echo "<script type='text/javascript'>alert('$message');</script>";*/
 
-	header('Location: list_restaurants.php');
+	header('Location: mainpage.php');
 	exit();
 ?>
