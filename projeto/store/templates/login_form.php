@@ -7,7 +7,7 @@
 		<div class="form-input">Password:
 			<input type="password" name="password" id="password" placeholder="Enter password">
 		</div>
- 		<input type="submit" name="login" value="Log in" class="submit-button">
+ 		<input type="submit" name="login" value="Login" class="submit-button">
  		<br><a href="#">Forgot the password?</a>
 	</form>
 </section>
