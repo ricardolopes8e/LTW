@@ -14,7 +14,7 @@
 	}
 	change_username($new_username, $current_username);
 	
-	$_SESSION['username'] = $newUsername;
+	$_SESSION['username'] = $new_username;
 	$_SESSION['responseContent'] = 'Edited username successfully. ';
 /*	$message = "Edited username successfully. ";
 	echo "<script type='text/javascript'>alert('$message');</script>";*/

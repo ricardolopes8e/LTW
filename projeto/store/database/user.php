@@ -39,7 +39,7 @@
 	
 	if ($stmt->fetch()) {
 		$_SESSION['responseContent'] = 'That username is already taken.';
-		header('Location: list_restaurants.php');
+		header('Location: edit_user.php');
 		exit();
 	}
 	else {
