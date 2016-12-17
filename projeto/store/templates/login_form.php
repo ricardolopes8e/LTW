@@ -1,6 +1,6 @@
 <section id="login_content">
 	<h2>Login</h2>
-	<form action="action_login.php" method="POST">
+	<form action="action_loginNEW.php" method="POST">
 		<div class="form-input">Username:
 			<input type="text" name="username" id="username" placeholder=" Enter Username">
 		</div>
