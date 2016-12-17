@@ -5,19 +5,28 @@ CREATE TABLE owner (
 );
 
 CREATE TABLE restaurant (
-	id INTEGER  PRIMARY KEY AUTOINCREMENT,	
+	id INTEGER PRIMARY KEY AUTOINCREMENT,	
 	name VARCHAR(255) NOT NULL,
 	user_owner VARCHAR(255) NOT NULL REFERENCES owner(username) ,
 	timetable VARCHAR,
 	contact INTEGER,
 	adress VARCHAR(255),
 	description VARCHAR(255) NOT NULL,
-	id_review INTEGER REFERENCES review(id)
+	idCity INTEGER REFERENCES City(idCity)
  );
  
-INSERT INTO restaurant VALUES(1,'BB Vila', 'LuisCruz','Segunda - Domingo 12:00h - 3:00h',229383374,'Rua das Larangas','Um restaurante da cadeira BB',NULL );
-INSERT INTO restaurant VALUES(2,'BB Gourmet', 'MiguelCruz', 'Segunda-Sabado 12:00h - 2:00h',221122112,'Rua dos morangos', 'Um restaurante Gourmet' ,NULL);
-INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h - 4:00h',220101010,'Avenida Brasil', 'Um restaurante na Foz', 1);
+INSERT INTO restaurant VALUES(1,'BB Vila', 'LuisCruz','Segunda - Domingo 12:00h - 3:00h',229383374,'Rua das Larangas','Um restaurante da cadeira BB',1);
+INSERT INTO restaurant VALUES(2,'BB Gourmet', 'MiguelCruz', 'Segunda-Sabado 12:00h - 2:00h',221122112,'Rua dos morangos', 'Um restaurante Gourmet',2);
+INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h - 4:00h',220101010,'Avenida Brasil', 'Um restaurante na Foz',2);
+
+CREATE TABLE City(
+			idCity INTEGER PRIMARY KEY,
+			city VARCHAR
+			);
+			
+INSERT INTO City VALUES(1,'Porto - Francos');
+INSERT INTO City VALUES(2,'Porto - Foz');
+
 
  CREATE TABLE review (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,6 +38,7 @@ INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h 
   );
   
 INSERT INTO review VALUES(1, 2, 'LuisCruz','22-03-2016',5,'Melhor local para ir jantar e receber um bolo de aniversário!');
+INSERT INTO review VALUES(2, 2, 'MiguelCruz','22-03-2016',4,'Boa refeição a preços acessiveis. Oferta de bolo em caso de aniversário.');
 
  CREATE TABLE user (
   username VARCHAR(255),
