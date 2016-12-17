@@ -20,7 +20,6 @@
 
   }
 
-
   function verifyUser($username, $password) {
     global $conn;  
     
@@ -28,6 +27,24 @@
     $stmt->execute(array($username, $password));
     return ($stmt->fetch() !== false);
   }
+  
+  
+  function getInfo($username) {
+    global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM user WHERE username = ?');
+	$stmt->execute(array($username));
+    return ($stmt->fetch());
+  }
+  
+   function getInfo_user_photo($username) {
+    global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM UserFoto WHERE username = ?');
+	$stmt->execute(array($username));
+    return ($stmt->fetch());
+  }
+  
   
   function change_username($new_username, $current_username) {
 	  global $conn; 

@@ -17,6 +17,6 @@
 	//$_SESSION['responseContent'] = 'Edited second name successfully. ';
 	$message = "Edited description successfully.";
 	echo "<script type='text/javascript'>alert('$message');</script>";
-	header('Location: mainpage.php');
+	header('Location: index.php');
   	exit();
 ?>

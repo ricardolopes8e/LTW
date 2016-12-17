@@ -25,6 +25,8 @@
               { ?>
               <div id="LogOut-Button">
                 <a href="action_logout.php">Log Out</a>
+				<a href="edit_user.php">Edit User</a>
+				<a href="see_user.php">User</a>
               </div>
             <?php } 
           ?>

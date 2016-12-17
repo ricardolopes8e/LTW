@@ -20,17 +20,17 @@
    
    <form action="action_change_email.php" method="post">
 	<div class="form-input">New Email:
-      <input type="text" name="new_email" id="new_email" placeholder="Enter new email">
+      <input type="email" name="new_email" id="new_email" placeholder="Enter new email">
     </divl>
 	<input type="Submit" name="submit" value="Submit" class="submit-button">
    </form>
-   
+  <?php /* 
     <form action="action_change_description.php" method="post">
 	<div class="form-input">New Description:
       <input type="text" name="new_description" id="new_description" placeholder="Enter new description">
     </divl>
     <input type="Submit" name="submit" value="Submit" class="submit-button">
-   </form>
+   </form>*/?>
  
   <form action="action_change_profile_pic.php" method="post" enctype="multipart/form-data">
         <label>New Profile Picture:
@@ -39,5 +39,5 @@
 		<input type="Submit" name="submit" value="Submit" class="submit-button">
    </form>
    
-   <li><a href="mainpage.php">Main Page</a></li>
+   <li><a href="index.php">Main Page</a></li>
 </section>
