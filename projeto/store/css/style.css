@@ -1,9 +1,19 @@
+header{
+  padding-bottom: 50px;
+}
+
 header h1 {
   margin: 0;
 }
 
+/*For the navigation bar*/
+
 nav {
-  padding: 1em 2em;
+  /*padding: 1em 2em;*/
+  position: absolute;
+  top: 0;
+  padding-top: 30px;
+  padding-left: 850px;
 }
 
 nav ul {
@@ -12,14 +22,16 @@ nav ul {
   margin: 0;
 }
 
-nav li {
+nav li a{
   display: inline;
+  text-decoration: none;
   border-right: 0px solid #9C27B0;
   padding: 0 1em;
 }
 
 nav li:last-child {
   border: none;
+  text-decoration: none;
 }
 
 nav a {
@@ -30,10 +42,47 @@ nav a {
   /*text-transform: uppercase;*/
 }
 
+#Buttons {
+  position: absolute;
+  top: 0;
+  right: 20px;
+  padding-top: 31px;
+
+}
+
+#Buttons li{
+  text-decoration: none;
+}
+
+#Buttons a{
+  text-decoration: none;
+  padding-right: 30px;
+  font-family: Calibri,sans-serif;
+  color: white;
+  font-size: 20px;
+}
+
+#LogOut-Button{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  padding-top: 30px;
+}
+
+#LogOut-Button a{
+  text-decoration: none;
+  font-family: Calibri,sans-serif;
+  color: white;
+  font-size: 20px;
+  float: right;
+  padding-right: 100px;
+}
+
+/*For the search of restaurants*/
 .search-form{
   text-align: center;
-  padding-top: 23%;
-}
+  padding-top: 25%;
+} 
 .search-form input{
   text-align: center;
   font-family: Calibri,sans-serif;
@@ -41,33 +90,33 @@ nav a {
   height: 25px;
 }
 
+/*For the register form*/
 #content {
   position: absolute;
+  top:115px;
   width: 500px;
   height: 400px;
-  left: 410px;
+  left: 420px;
   text-align: center;
   background-color: rgba(166, 174, 188,1);
   border-radius: 4px;
   margin: 0 auto;
   z-index: 1;
-  margin-top: 150px;
 }
 
 #content h2 {
   text-align: center;
-  font-size: 65px;
+  font-size: 35px;
   text-transform: uppercase;
   font-weight: 300;
   color: #fff;
-  padding-top: 15%;
+  padding-top: 10%;
   margin-bottom: 10px;
-  margin: 0;
 }
 
-#content input[type="text"], input[type="password"]  {
+#content input[type="text"], input[type="password"] {
   height: 25px;
-  width: 300px;
+  width: 180px;
   font-size: 18px;
   margin-bottom: 20px;
   padding-left: 40px;
@@ -90,13 +139,15 @@ nav a {
   content: "";
 }
 
-.submit-button{
+.submit-button {
   padding: 15px 30px;
   color: #fff;
   border-radius: 4px;
   border: none;
   border-bottom: 4px solid #27AE60;
   background-color: #2ECC71;
+  display: inherit;
+  margin-left: 200px;
 }
 
 #content.a{
@@ -128,7 +179,7 @@ nav a {
   margin: 0;
   padding: 0;
 }
-
+      
 html, body{
   height: 100%;
   font-family: Calibri,sans-serif;
@@ -147,6 +198,7 @@ footer {
   /*padding: 1em 3em;*/
 }
 
+/*for the video background*/
 
 .background-wrap{
   position: fixed;
@@ -166,6 +218,7 @@ footer {
   /*height: 100%;*/
 }
 
+/*For the text in front of the video*/
 .vid-content{
   position: absolute;
   top:0;
@@ -185,6 +238,18 @@ footer {
   margin-bottom: 10px;
 }
 
+.vid-content a{
+  text-align: center;
+  font-size: 65px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  padding-top: 15%;
+  margin-bottom: 10px;
+}
+
 .vid-content p{
   text-align: center;
   font-size:20px;
@@ -192,58 +257,7 @@ footer {
   color: #aaa;
 }
 
-.vid2-content{
-  position: absolute;
-  top:0;
-  width: 100%;
-  min-height: 100%;
-  z-index: -1;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.vid2-content h1{
-
-    margin-top: 0;
-    padding:0px;
-
-  font-size: 65px;
-  text-transform: uppercase;
-  font-weight: 300;
-  color: #fff;
-  padding-top: 15%;
-  margin-bottom: 10px;
-}
-
-.vid2-content p{
-  font-size:30px;
-  float:left;
-  letter-spacing: 4px;
-  color: #fff;
-}
-
-.restaurante-div{
-
-}
-#Buttons {
-  position: absolute;
-  top: 0;
-  right: 20px;
-  padding-top: 31px;
-
-}
-
-#Buttons li{
-  text-decoration: none;
-}
-
-#Buttons a{
-  text-decoration: none;
-  padding-right: 30px;
-  font-family: Calibri,sans-serif;
-  color: white;
-  font-size: 20px;
-}
-
+/*For the log in */
 #login_content{
   position: absolute;
   top:115px;
@@ -273,4 +287,40 @@ footer {
   font-size: 18px;
   margin-bottom: 20px;
   padding-left: 40px;
+}
+
+/*For the username symbol in the register option*/
+#login_content form-input::before{
+  content: "";
+  position: a;
+  font-family: "FontAwesome";
+  font-size: 40px;
+  padding-left: 5px;
+  padding-top: 5px;
+  font-size: 35px;
+  color: rgb(222, 226, 232);
+}
+
+/*For the pass symbol in the register option*/
+.form-input::nth-child(2)::before{
+  content: "";
+}
+
+.submit-button {
+  padding: 15px 30px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #27AE60;
+  background-color: #2ECC71;
+  display: inherit;
+  margin-left: 200px;
+}
+
+
+/*For the resturant search results*/
+
+.detalhesRestauranteMainDiv {
+  background-color: white;
+  padding: 12px;
 }
