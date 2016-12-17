@@ -2,8 +2,8 @@
 
   function addReview($restaurant_id){
 	global $conn;
-	$stmt = $conn->prepare('INSERT INTO review (idUser, comment, id_restaurant, id) VALUES (?,?,?,?)');
-	$stmt->execute(array($_POST["idUser"], trim($_POST["comment"]), $_POST["id_restaurant"], $_POST["id"]));
+	$stmt = $conn->prepare('INSERT INTO review (username, comment, id_restaurant, id) VALUES (?,?,?,?)');
+	$stmt->execute(array($_POST["username"], trim($_POST["comment"]), $_POST["id_restaurant"], $_POST["id"]));
 	return $stmt->fetch();
   }
   

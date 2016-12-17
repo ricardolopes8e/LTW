@@ -16,15 +16,15 @@
 	$description = $stmt->execute(array($user));
 	
 	$stmt = $conn->prepare(
-		'SELECT imagePath FROM user
-		WHERE username = ?');
-	$imagePath = $stmt->execute(array($user));
+		'SELECT photo_name FROM photo, user_photo
+		WHERE user_photo.username = ? AND photo.id_photo= user_photo.id_photo');
+	$id_photo = $stmt->execute(array($user));
   
 ?>
 <section id="see_user">
 	<h2>User</h2>
 	<header>
-		<img id="user_image" src=<?=$imagePath?> alt="userPic"/>
+		<img id="user_image" src="database/photos/<?=$id_photo?>" alt="userPic"/>
 		<section>
 			Username: <h3 id="username"><?=$user?></h3>
 		</section>
