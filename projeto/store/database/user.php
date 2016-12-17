@@ -47,23 +47,14 @@
 		$stmt->execute(array($new_username, $current_username));
 	}
   }
-  function change_firstname($new_firstname, $current_firstname){
+  function change_email($new_email, $current_username){
 	  global $conn; 
 	
 		$stmt = $conn->prepare(
-		'UPDATE user SET firstname = ? 
+		'UPDATE user SET email = ? 
 		WHERE username = ?');
-		$stmt->execute(array($new_firstname, $current_username));
+		$stmt->execute(array($new_email, $current_username));
 
-  }
-  function change_secondname($new_secondname, $current_username){
-	  global $conn; 
-	
-		$stmt = $conn->prepare(
-		'UPDATE user SET secondname = ? 
-		WHERE username = ?');
-		$stmt->execute(array($new_secondname, $current_username));
-	
   }
   function change_description($new_description, $current_username){
 	  global $conn; 
@@ -71,9 +62,16 @@
 		$stmt = $conn->prepare(
 		'UPDATE user SET description = ? 
 		WHERE username = ?');
-		$stmt->execute(array($new_secondname, $current_username));
+		$stmt->execute(array($new_description, $current_username));
 	
   }
+	function searchUsers($search){
+		global $conn;
+		$stmt = $conn->prepare("SELECT user.name FROM user WHERE user.name LIKE '%$search%'");
+		$stmt->execute();
+		$result =  $stmt->fetchAll();
+	return $result;
+	}
 
 
 ?>

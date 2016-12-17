@@ -18,18 +18,11 @@
 
 	</form>	
    
-   <form action="action_change_firstname.php" method="post">
-	<div class="form-input">New First Name:
-      <input type="text" name="new_firstname" id="new_firstname" placeholder="Enter new first name">
+   <form action="action_change_email.php" method="post">
+	<div class="form-input">New Email:
+      <input type="text" name="new_email" id="new_email" placeholder="Enter new email">
     </divl>
 	<input type="Submit" name="submit" value="Submit" class="submit-button">
-   </form>
-   
-   <form action="action_change_secondname.php" method="post">
-	<div class="form-input">New Second Name:
-      <input type="text" name="new_secondname" id="new_secondname" placeholder="Enter new second name">
-    </divl>
-    <input type="Submit" name="submit" value="Submit" class="submit-button">
    </form>
    
     <form action="action_change_description.php" method="post">

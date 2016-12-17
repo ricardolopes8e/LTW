@@ -4,20 +4,20 @@
   include_once('database/user.php');
   
 	$current_username = $_SESSION['username'];
-	$new_firstname = $_POST['new_firstname'];
+	$new_email = $_POST['new_email'];
 
-	if ($new_firstname === "") {
-		//$_SESSION['responseContent'] = 'No firstname specified.';
-		$message = "No firstname specified.";
+	if ($new_email === "") {
+		//$_SESSION['responseContent'] = 'No email specified.';
+		$message = "No email specified.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header('Location: edit_user.php');
 		exit();
 	}
-	change_firstname($new_firstname, $current_username);
+	change_email($new_email, $current_username);
 	
 	
 	//$_SESSION['responseContent'] = 'Edited first name successfully. ';
-	$message = "Edited first name successfully.";
+	$message = "Edited email successfully.";
 	echo "<script type='text/javascript'>alert('$message');</script>";
 	header('Location: mainpage.php');
 	exit();

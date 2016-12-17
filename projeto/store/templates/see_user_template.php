@@ -6,14 +6,9 @@
 	$user = $_SESSION['username'];
   
 	$stmt = $conn->prepare(
-		'SELECT firstname FROM user
+		'SELECT email FROM user
 		WHERE username = ?');
-	$firstname = $stmt->execute(array($user));
-	
-	$stmt = $conn->prepare(
-		'SELECT  secondname FROM user
-		WHERE username = ?');
-	$secondname = $stmt->execute(array($user));
+	$email = $stmt->execute(array($user));
 	
 	$stmt = $conn->prepare(
 		'SELECT  description FROM user
@@ -34,10 +29,7 @@
 			Username: <h3 id="username"><?=$user?></h3>
 		</section>
 		<section>
-			First name: <h3 id="firstname"><?=$firstname?></h3>
-		</section>
-		<section>
-			Last name: <h3 id="secondname"><?=$secondname?></h3>
+			Email: <h3 id="email"><?=$email?></h3>
 		</section>
 		<section>
 			Description: <h3 id="description"><?=$description?></h3>

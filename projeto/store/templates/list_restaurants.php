@@ -28,7 +28,7 @@
 	$restaurant_image = $stmt->execute(array($restaurant));
 	
 	$stmt = $conn->prepare(
-		'SELECT local FROM restaurant
+		'SELECT adress FROM restaurant
 		WHERE id = ?');
 	$restaurant_local= $stmt->execute(array($restaurant));
 	
@@ -47,7 +47,7 @@
 		echo "<br>"; 
 		echo $restaurant_description;
 		echo "<br>";
-		echo $restaurant_local; ?>
+		echo $restaurant_adress; ?>
 		
 		<?php include('list_reviews.php?restaurant_id=$restaurant_id')?>
       </li>
