@@ -5,23 +5,22 @@ CREATE TABLE owner (
 );
 
 CREATE TABLE restaurant (
-	id INTEGER AUTOINCREMENT,	
+	id INTEGER  PRIMARY KEY AUTOINCREMENT,	
 	name VARCHAR(255) NOT NULL,
 	user_owner VARCHAR(255) NOT NULL REFERENCES owner(username) ,
 	timetable VARCHAR,
 	contact INTEGER,
 	adress VARCHAR(255),
 	description VARCHAR(255) NOT NULL,
-	id_review INTEGER REFERENCES review(id),
-	PRIMARY KEY(id)
+	id_review INTEGER REFERENCES review(id)
  );
  
-INSERT INTO restaurant VALUES(1,'BB Vila', 'LuisCruz','Segunda - Domingo 12:00h - 3:00h',229383374,'Rua das Larangas','Vila',NULL );
-INSERT INTO restaurant VALUES(2,'BB Gourmet', 'MiguelCruz', 'Segunda-Sabado 12:00h - 2:00h',221122112,'Rua dos morangos', 'Gourmet' ,NULL);
-INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h - 4:00h',220101010,'Avenida Brasil', 'Foz', 1);
+INSERT INTO restaurant VALUES(1,'BB Vila', 'LuisCruz','Segunda - Domingo 12:00h - 3:00h',229383374,'Rua das Larangas','Um restaurante da cadeira BB',NULL );
+INSERT INTO restaurant VALUES(2,'BB Gourmet', 'MiguelCruz', 'Segunda-Sabado 12:00h - 2:00h',221122112,'Rua dos morangos', 'Um restaurante Gourmet' ,NULL);
+INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h - 4:00h',220101010,'Avenida Brasil', 'Um restaurante na Foz', 1);
 
  CREATE TABLE review (
-	id INTEGER AUTOINCREMENT PRIMARY KEY,
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
 	id_restaurant INTEGER REFERENCES restaurant(id),
 	username VARCHAR(255) NOT NULL REFERENCES user(username),	
 	dateAval DATE,
@@ -29,7 +28,7 @@ INSERT INTO restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h 
 	comment VARCHAR(255) NOT NULL
   );
   
-INSERT INTO review VALUES(1, 2, 'LuisCruz',5,'22-03-2016','Melhor local para ir jantar e receber um bolo de aniversário!');
+INSERT INTO review VALUES(1, 2, 'LuisCruz','22-03-2016',5,'Melhor local para ir jantar e receber um bolo de aniversário!');
 
  CREATE TABLE user (
   username VARCHAR(255),
@@ -46,6 +45,7 @@ CREATE TABLE photo(
 			id_photo INTEGER PRIMARY KEY , 
 			photo_name VARCHAR
 			);
+
 INSERT INTO photo VALUES(1, 'img1.jpg');
 INSERT INTO photo VALUES(2, 'img2.jpg');
 INSERT INTO photo VALUES(3, 'img3.jpg');
