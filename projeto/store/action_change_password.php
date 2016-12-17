@@ -13,7 +13,7 @@ include_once('config/init.php');
 		//$_SESSION['responseContent'] = 'Passwords not matching.';
 		$message = "Passwords not matching.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
-		header('Location: registerPage.php');
+		header('Location: edit_user.php');
 		exit();
 	}
 	else{
