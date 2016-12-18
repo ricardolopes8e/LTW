@@ -1,6 +1,6 @@
-<div class="detalhesRestauranteMainDiv">
-		<div class="tabContentGroup">
-			<div id="restaurantes" class="tabContent">
+<div class="List-Restaurants">
+		<div class="List-Restaurants-contents">
+			<div id="restaurantes">
 
 				<?php if(count($Result_restaurants)>0)
 				{
@@ -8,7 +8,7 @@
 					foreach($Result_restaurants as $ThisRestaurant)
 						{ ?>
 					
-					<div id="cadaRestaurante">
+					<div id="Restaurant">
 
 						<?php 
 						
@@ -27,7 +27,7 @@
 						<h1>Rating: <?=$Rating ?> stars</h1>
 
 
-						<a href="RestaurantDetailPage.php?Restaurant_search=<?=$This_Rest_Name['idRestaurant'] ?>#info"> Ver detalhes do restaurante </a>
+						<a href="RestaurantDetailPage.php?Restaurant_search=<?=$This_Rest_Name['idRestaurant'] ?>#info"> See Restaurant </a>
 
 					</div>
 					<?php } ?>
