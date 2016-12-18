@@ -1,12 +1,11 @@
 <?php
-
-  function addReview($restaurant_id){
+/* function addReview($restaurant_id){
 	global $conn;
 	$stmt = $conn->prepare('INSERT INTO review (username, comment, id_restaurant, id) VALUES (?,?,?,?)');
-	$stmt->execute(array($_POST["username"], trim($_POST["comment"]), $_POST["id_restaurant"], $_POST["id"]));
+	$stmt->execute(array($_SESSION["username"], trim($_POST["comment"]), $_POST["id_restaurant"], $_POST["id"]));
 	return $stmt->fetch();
   }
-  
+  */
   //obter as reviews associada a um restaurant
 	function getRestaurant_reviews($id_restaurant){
 		global $conn;
