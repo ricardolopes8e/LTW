@@ -54,10 +54,12 @@
   <li>Rating:<?=$rating?></li>
   </ul>
   
-  <li><a href="addReview.php?idRestaurant=<?=$_GET["idRestaurant"]?>">Add Review</a></li>
+
   </div>
 
 
     <?php } ?>
-  </ul>
+  </ul> 
+  <li><a href="index.php">Main Page</a></li>
+    <li><a href="addReview.php?idRestaurant=<?=$_GET["idRestaurant"]?>">Add Review</a></li>
 </section>
