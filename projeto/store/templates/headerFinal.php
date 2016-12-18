@@ -15,6 +15,7 @@
       </div>
 
       <div id="logreg">
+<<<<<<< HEAD
         <?php if (isset($_SESSION['username'])) 
         { ?>
         <div id="LogOut-Button">
@@ -25,6 +26,18 @@
         </div>
         <?php } 
         ?>
+=======
+          <?php if (isset($_SESSION['username'])) 
+              { ?>
+              <div id="LogOut-Button">
+                <a href="action_logout.php">Log Out</a>
+				<a href="edit_user.php">Edit User</a>
+				<a href="see_user.php">User</a>
+				<a href="add_restaurant.php">Add Restaurant</a>
+              </div>
+            <?php } 
+          ?>
+>>>>>>> origin/master
 
         <?php if (!isset($_SESSION['username'])) 
         { ?>
