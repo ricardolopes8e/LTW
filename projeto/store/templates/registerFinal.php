@@ -17,7 +17,7 @@
          <input type="file" name="FotoToUpload" id="fileToUpload">
     </div>
     <div>
-      <input class="registoBtn" type="submit" value="Submit">
+      <input type="Submit" name="submit" value="Submit" class="submit-button">
     </div>
   </form>
 </section>

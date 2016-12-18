@@ -289,7 +289,7 @@ footer {
   padding-left: 40px;
 }
 
-/*For the username symbol in the register option*/
+/*For the username symbol in the login option*/
 #login_content form-input::before{
   content: "";
   position: a;
@@ -301,7 +301,7 @@ footer {
   color: rgb(222, 226, 232);
 }
 
-/*For the pass symbol in the register option*/
+/*For the pass symbol in the login option*/
 .form-input::nth-child(2)::before{
   content: "";
 }

@@ -1,4 +1,4 @@
-<section id="edit user">
+<section id="edit_user">
   <h2>Edit User</h2>
   <form action="action_change_username.php" method="post">
     <div class="form-input">New Username:
@@ -11,8 +11,8 @@
     <div class="form-input">New Password:
       <input type="password" name="new_password" id="new_password" placeholder="Enter new password">
 	</divl>
-	<div class="form-input">Confirmation New Password:
-	  <input type="password" name="new_password_confirmation" id="new_password_confirmation" placeholder="Enter new password again">
+	<div class="form-input">Confirmation:
+	  <input type="password" name="new_password_confirmation" id="new_password_confirmation" placeholder="Confirm password">
 	</divl>
     <input type="Submit" name="submit" value="Submit" class="submit-button">
 
@@ -36,8 +36,9 @@
         <label>New Profile Picture:
           <input type="file" name="FotoToUpload" id="fileToUpload">
         </label>
-		<input class="registoBtn" type="submit" value="Submit">
+		<input type="Submit" name="submit" value="Submit" class="submit-button">
    </form>
-   
-   <li><a href="index.php">Main Page</a></li>
+   <div id="MainPage">
+   <a href="index.php">Main Page</a>
+   </divl>
 </section>
