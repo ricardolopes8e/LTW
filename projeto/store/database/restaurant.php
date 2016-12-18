@@ -8,6 +8,15 @@
 	return $stmtRests->fetchAll();
   }
   
+  function VerifyOwner($username, $idRestaurant){
+	  
+	   global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM restaurant WHERE idRestaurant = ? AND owner = ?');
+    $stmt->execute(array($idRestaurant, $username));
+    return ($stmt->fetch() !== false);
+  } 
+  
 function getProx_idRestaurant() {
 	global $conn;
 	
@@ -81,15 +90,65 @@ function search_Sugestion_Restaurant($search){
 
 function updateRestaurant_timetable($id_restaurant, $timetable){
 		global $conn;
-		$stmt = $conn->prepare("UPDATE restaurant SET timetable = \"$timetable\" WHERE id_restaurant = \"$id_restaurant\"");
-		$stmt->execute();
-		return $stmt->fetch();
+		$stmt = $conn->prepare("UPDATE restaurant SET timetable = ? WHERE idRestaurant = ?");
+		$stmt->execute(array($timetable,$id_restaurant));
+	}
+	function updateRestaurant_name($id_restaurant, $name){
+		global $conn;
+		$stmt = $conn->prepare("UPDATE restaurant SET name = ? WHERE idRestaurant = ?");
+		$stmt->execute(array($name, $id_restaurant));
+	}
+		function updateRestaurant_address($id_restaurant, $address){
+		global $conn;
+		$stmt = $conn->prepare("UPDATE restaurant SET address = ? WHERE idRestaurant = ?");
+		$stmt->execute(array($address, $id_restaurant));
+	}
+
+    	function updateRestaurant_contact($id_restaurant, $contact){
+		global $conn;
+		$stmt = $conn->prepare("UPDATE restaurant SET contact = ? WHERE idRestaurant = ?");
+		$stmt->execute(array($contact, $id_restaurant));
 	}
 	
-function updateRestaurant_contact($id_restaurant, $contact){
+		function existCity($city){
+			    global $conn;
+
+			$stmt = $conn->prepare('SELECT * FROM City WHERE city = ?');
+			$stmt->execute(array($city));
+			return $stmt->fetch();		
+		}
+	
+	function updateRestaurant_city($new_city, $idRestaurant){
 		global $conn;
-		$stmt = $conn->prepare("UPDATE restaurant SET contact = \"$contact\" WHERE id_restaurant = \"$id_restaurant\"");
-		$stmt->execute();
-		return $stmt->fetch();
+		
+		if($infocity=existCity($new_city)){
+			$idCity=$infocity['idCity']; 
+				$stmt = $conn->prepare("UPDATE restaurant SET idCity = ? WHERE idRestaurant = ?");
+				$stmt->execute(array($idCity, $idRestaurant));
+		}
+		else{	
+		$idDeLocalizacaoArray = $conn->prepare("SELECT MAX(idCity) FROM City");
+		$idDeLocalizacaoArray->execute();
+		$idDeLocalizacaoResultado = $idDeLocalizacaoArray->fetch();
+		$idDeLocalizacao =  $idDeLocalizacaoResultado["MAX(idCity)"];
+		$idDeLocalizacao++;
+	
+
+		$stml = $conn->prepare('INSERT INTO City VALUES (?, ?)');
+		$stml->execute(array($idDeLocalizacao, $new_city));
+		
+		$stmt = $conn->prepare("UPDATE restaurant SET idCity = ? WHERE idRestaurant = ?");
+		$stmt->execute(array($idDeLocalizacao, $idRestaurant));
+		}
+		
 	}
+
+   function getInfo_restaurant_photo($idRestaurant) {
+    global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM RestaurantFoto WHERE idRestaurant = ?');
+	$stmt->execute(array($idRestaurant));
+	return ($stmt-> fetch()); 
+  }
   ?>
+  

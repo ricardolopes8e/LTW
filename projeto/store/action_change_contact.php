@@ -1,18 +1,18 @@
 <?php
   include_once('config/init.php');
   include_once('database/restaurant.php');
-
-	$idRestaurant = $_POST['idRestaurant'];
-
-	if ($idRestaurant === "") {
-		//$_SESSION['responseContent'] = 'No username specified.';
-		$message = "No restaurant specified.";
+	$idRestaurant = $_GET['idRestaurant'];
+	$new_contact = $_POST['new_contact']; 
+	
+	if ($new_contact === "") {
+		//$_SESSION['responseContent'] = 'No usercontact specified.';
+		$message = "No contact specified.";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header('Location: edit_restaurant.php');
 		exit();
 	}
-	change_contact($new_contact, $idRestaurant);
+	updateRestaurant_contact($idRestaurant, $new_contact);
 
-	header('Location: index.php');  //tirar depois do index
+	header('Location: index.php');  
 	exit();
 ?>

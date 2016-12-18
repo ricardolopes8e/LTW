@@ -56,7 +56,7 @@ include_once('database/photo.php');
 	
 	$stmt->execute(array($idFoto, $current_username));
 	
-	$_SESSION['image'] = $idFoto;
+	//$_SESSION['image'] = $idFoto;
 	session_write_close();
 	
 	header('Location: index.php');
