@@ -18,7 +18,14 @@ $owner = $res['owner'];
 $timetable = $res['timetable']; 
 $contact = $res['contact']; 
 $address = $res['address'];
-
+$idcity = $res['idCity'];
+$idRestaurant=$res['idRestaurant']; 
+	
+	$stmt = $conn->prepare('SELECT * FROM City WHERE City.idCity = ?');
+    $stmt->execute(array($idcity));
+    $infoCity = $stmt->fetch();
+	$city= $infoCity['city'];
+	
 $idFoto = $info_restaurant_photo['idFoto'];
 $infoFoto = getInfoFoto($idFoto);
 $FotoName = $infoFoto['fotoName'];
@@ -55,12 +62,15 @@ $resultreview = $stmt->fetchAll();
 			<section id="address">
 				Address: <h3><?=$address?></h3>
 			</section>
+			<section>
+				City: <h3 id="city"><?=$city?></h3>
+			</section>
 			<section id="rating">
 				Rating: <h3><?=$Rating?> stars</h3>
 			</section>
 		</section>
 	</header>
-
+	<li><a href="reviewPage.php?idRestaurant=<?=$idRestaurant?>"> Ver reviews </a><li>
 	<li><a href="index.php">Main Page</a></li>
 </section>
 
