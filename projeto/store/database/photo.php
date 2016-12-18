@@ -1,35 +1,53 @@
 <?php
 
-function getProx_id_photo() {
+function getProx_idFoto() {
 	global $conn;
 	
-	$idF = $conn->prepare("SELECT MAX(id_photo) FROM photo");
+	$idF = $conn->prepare("SELECT MAX(idFoto) FROM Foto");
     $idF->execute();
 	$idFt = $idF->fetch();
-	$id_photo =  $idFt["MAX(id_photo)"];
-	$id_photo++;
-	return $id_photo;
+	$idFoto =  $idFt["MAX(idFoto)"];
+	$idFoto++;
+	return $idFoto;
 }
 
 
 function createphoto($id, $name) {
 	global $conn;
 	
-	$stml = $conn->prepare('INSERT INTO photo VALUES (?, ?)');
+	$stml = $conn->prepare('INSERT INTO Foto VALUES (?, ?)');
     $stml->execute(array($id, $name));
 }
 
-function putPhoto_to_user($user, $id_photo) {
+function putPhoto_to_user($user, $idFoto) {
 	global $conn;
 	
-	$stml = $conn->prepare('INSERT INTO user_photo VALUES (?, ?)');
-    $stml->execute(array($id_photo, $user));
+	$stml = $conn->prepare('INSERT INTO userFoto VALUES (?, ?)');
+    $stml->execute(array($idFoto, $user));
 }
 
-function putPhoto_to_restaurant($id_restaurant, $id_photo) {
+function see_if_username_hasFoto($user){
+		global $conn;
+	
+	$stmt = $conn->prepare('SELECT * FROM userFoto WHERE username =? ');
+	$stmt->execute(array($user));
+	return ($stmt->fetch()); 
+}
+
+function getInfoFoto($idFoto){
+	
 	global $conn;
 	
-	$stml = $conn->prepare('INSERT INTO restaurant_photo VALUES (?, ?)');
-    $stml->execute(array($id_photo, $id_restaurant));
+	$stmt = $conn->prepare('SELECT * FROM Foto WHERE idFoto =? ');
+	$stmt->execute(array($idFoto));
+	return ($stmt->fetch()); 
+	
+}
+
+function putPhoto_to_restaurant($id_restaurant, $idFoto) {
+	global $conn;
+	
+	$stml = $conn->prepare('INSERT INTO restaurantFoto VALUES (?, ?)');
+    $stml->execute(array($idFoto, $id_restaurant));
 }
 ?>

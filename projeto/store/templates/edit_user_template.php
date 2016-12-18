@@ -34,9 +34,9 @@
  
   <form action="action_change_profile_pic.php" method="post" enctype="multipart/form-data">
         <label>New Profile Picture:
-          <input type="file" name="image">
+          <input type="file" name="FotoToUpload" id="fileToUpload">
         </label>
-		<input type="Submit" name="submit" value="Submit" class="submit-button">
+		<input class="registoBtn" type="submit" value="Submit">
    </form>
    
    <li><a href="index.php">Main Page</a></li>

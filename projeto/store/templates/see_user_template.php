@@ -1,7 +1,8 @@
 <?php
   include_once('config/init.php');
   include_once('database/user.php'); 
-  
+  include_once('database/photo.php'); 
+
    
 	$user = $_SESSION['username'];
 
@@ -9,14 +10,22 @@
 	$info_user_photo = GetInfo_user_photo($user);
 	$email = $info['email']; 
 //	$description = $info['description'];
-	$id_photo = $info_user_photo['idFoto'];
+	$idFoto = $info_user_photo['idFoto'];
+	$infoFoto = getInfoFoto($idFoto);
+	$FotoName = $infoFoto['fotoName']
  
  
 ?>
 <section id="see_user">
 	<h2>User</h2>
 	<header>
-		<img id="user_image" src="database/photos/<?=$id_photo?>" alt="userPic"/>
+	
+    </section>
+		<?php if($FotoName !== NULL){?>
+		<section>
+		<img src="database/photos/<?=$FotoName?>" width="200" height="200">
+		</section>
+		<?php } ?>
 		<section>
 			Username: <h3 id="username"><?=$user?></h3>
 		</section>

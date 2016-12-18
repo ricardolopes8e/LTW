@@ -1,5 +1,6 @@
 <?php
   include_once('config/init.php');
+  include_once('database/photo.php'); 
   
   $username = trim(strip_tags($_POST['username']));
   
@@ -20,7 +21,7 @@
   	/* See if file for user photo is empty or not*/
   	if(!empty($_FILES['FotoToUpload']['name']))
   	{
-		$extenntion = pathinfo($_FILES["FotoToUpload"]["name"], PATHINFO_EXTENSION);
+		$extention = pathinfo($_FILES["FotoToUpload"]["name"], PATHINFO_EXTENSION);
 		$size = getimagesize($_FILES["FotoToUpload"]["tmp_name"]);
 		
 		if($size == false) {
@@ -32,18 +33,20 @@
 		}
 		
 		$idFoto = getProxIdFoto();
-		$fotoName = 'img' . $idFoto . '.' . $extention;
-		$FotoDest = "database/fotos/" . $fotoName;
+		$fotoName = $idFoto . '.' . $extention;
+		$FotoDest = "database/photos/" . $fotoName;
 		
 		move_uploaded_file($_FILES["FotoToUpload"]["tmp_name"], $FotoDest);
 		
 
-		$stml = $db->prepare('INSERT INTO photo VALUES (?, ?)');
+		$stml = $conn->prepare('INSERT INTO Foto (idFoto, fotoName) VALUES (?, ?)');
    		$stml->execute(array($idFoto, $fotoName));
+		$stml->fetch(); 
 
 
-		$stml = $db->prepare('INSERT INTO user_photo VALUES (?, ?)');
+		$stml = $conn->prepare('INSERT INTO userFoto ( idFoto, username) VALUES (?, ?)');
     	$stml->execute(array($idFoto, $user));
+		$stml->fetch(); 
 	}
 	
 
