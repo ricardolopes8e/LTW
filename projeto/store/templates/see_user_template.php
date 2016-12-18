@@ -21,11 +21,12 @@
 	<header>
 	
     </section>
-		<?php if($FotoName !== NULL){?>
-		<section>
-		<img src="database/photos/<?=$FotoName?>" width="200" height="200">
-		</section>
-		<?php } ?>
+		<?php if($FotoName !== NULL)
+			{?>
+			<section id="user_image">
+				<img src="database/photos/<?=$FotoName?>" width="200" height="200">
+			</section>
+			<?php } ?>
 		<section>
 			Username: <h3 id="username"><?=$user?></h3>
 		</section>
