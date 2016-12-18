@@ -410,3 +410,67 @@ footer {
   padding-left: 5px;
   width: 76px;
 }
+
+
+/*For the see restaurant detailed Page*/
+
+#Restaurant-Detailed-Info{
+  width:800px;
+  height: 500px;
+  margin:0 auto;
+  margin-top: 300px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: rgba(166, 174, 188,0.6);
+}
+
+#Restaurant-Detailed-Info h2{
+  font-family: Calibri,sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#Restaurant-Detailed-Info header{
+  margin-left: 100px;
+  margin-right: 100px;
+  padding-top: 50px;
+}
+
+#Restaurant-Detailed-Info li{
+  list-style-type: none;
+  margin-right:350px;
+  margin-left:350px;
+  margin-top: -50px;
+}
+
+#Restaurant-Detailed-Info a{
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #27AE60;
+  background-color: #2ECC71;
+  display: inherit;
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-left: 5px;
+
+}
+#Restaurant-Image{
+  float:right;
+}
+
+#Restaurant-Image img{
+  border-radius: 100px;
+}
+
+#Restaurant-Info{
+  display: inline;
+  font-family: Calibri,sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#Restaurant-Info h3{
+  margin-left: 20px;
+}
