@@ -12,6 +12,20 @@ INSERT INTO Restaurant VALUES(1,'BB Vila', 'LuisCruz','Segunda - Domingo 12:00h 
 INSERT INTO Restaurant VALUES(2,'BB Gourmet', 'MiguelCruz', 'Segunda-Sabado 12:00h - 2:00h',221122112,'Rua dos morangos', 2);
 INSERT INTO Restaurant VALUES(3,'McDonals Foz', 'LuisCruz','Segunda-Sexta 7:00h - 4:00h',220101010,'Avenida Brasil', 2);
 
+
+CREATE TABLE RestaurantFoto(
+	idFoto INTEGER UNIQUE,
+	idRestaurant INTEGER, 
+	FOREIGN KEY(idFoto) REFERENCES Foto(idFoto),
+	FOREIGN KEY(idRestaurant) REFERENCES Restaurant(idRestaurant),
+	PRIMARY KEY (idFoto)
+	);
+
+INSERT INTO RestaurantFoto VALUES(1, 1); 
+INSERT INTO RestaurantFoto VALUES(2, 2); 
+INSERT INTO RestaurantFoto VALUES(3, 3); 
+
+
 CREATE TABLE Review(
 			idreview INTEGER PRIMARY KEY AUTOINCREMENT,
 			idRestaurant INTEGER,
