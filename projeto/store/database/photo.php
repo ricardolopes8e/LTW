@@ -34,6 +34,16 @@ function see_if_username_hasFoto($user){
 	return ($stmt->fetch()); 
 }
 
+
+function see_if_restaurant_hasFoto($idRestaurant){
+		global $conn;
+	
+	$stmt = $conn->prepare('SELECT * FROM RestaurantFoto WHERE idRestaurant =? ');
+	$stmt->execute(array($idRestaurant));
+	return ($stmt->fetch()); 
+}
+
+
 function getInfoFoto($idFoto){
 	
 	global $conn;

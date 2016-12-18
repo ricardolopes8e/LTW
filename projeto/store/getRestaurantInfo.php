@@ -8,6 +8,42 @@ function getRestaurant($Rest_Name){
 	return $Rest;
 }
 
+function getRestaurant_name($Rest_id){
+	global $conn;
+	$stmt = $conn->prepare("SELECT * FROM Restaurant WHERE idRestaurant = \"$Rest_id\"");
+	$stmt->execute();
+	$RestArray= $stmt->fetch(PDO::FETCH_ASSOC);
+	$Rest = $RestArray['name'];
+	return $Rest;
+}
+
+function getRestaurant_photo($idRestaurant){
+	global $conn;
+		$strft = "SELECT Foto.fotoName FROM Foto, RestaurantFoto WHERE  RestaurantFoto.idRestaurant = $idRestaurant AND  RestaurantFoto.idFoto = Foto.idFoto";
+	    $stmtfoto = $conn->prepare($strft);
+		$stmtfoto->execute();
+		return ($stmtfoto->fetchAll());
+}
+
+   function getInfo_restaurant($idRestaurant) {
+    global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM  Restaurant WHERE idRestaurant = ?');
+	$stmt->execute(array($idRestaurant));
+    return ($stmt->fetch());
+  }
+
+
+   function getInfo_restaurant_photo($idRestaurant) {
+    global $conn;  
+    
+    $stmt = $conn->prepare('SELECT * FROM  RestaurantFoto WHERE idRestaurant = ?');
+	$stmt->execute(array($idRestaurant));
+    return ($stmt->fetch());
+  }
+  
+
+
 function getAverage($Rest) {
 	global $conn;
 	
