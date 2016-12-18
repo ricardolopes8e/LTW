@@ -1,17 +1,31 @@
 /*For the register form*/
 #edit_user {
-  position: absolute;
+  /*position: absolute;*/
   top:115px;
-  width: 500px;
-  height: 400px;
+  width: 800px;
+  height: 380px;
   left: 420px;
   text-align: center;
-  background-color: rgba(166, 174, 188,1);
+  background-color: rgba(166, 174, 188,0.6);
   border-radius: 4px;
   margin: 0 auto;
   z-index: 1;
+
 }
 
+.form-input{
+  display: inline;
+  align-content:center;
+}
+
+#edit_user h2{
+  margin-top:20px;
+  text-decoration: none;
+  font-family: Calibri,sans-serif;
+  color: white;
+  font-size: 40px;
+  padding-bottom:20px;
+}
 #content h2 {
   text-align: center;
   font-size: 35px;
@@ -42,15 +56,33 @@
 }
 
 .submit-button {
-  padding: 15px 30px;
+  padding: 5px 10px;
   color: #fff;
   border-radius: 4px;
   border: none;
   border-bottom: 4px solid #27AE60;
-  background-color: #2ECC71;
+  background-color:#2ECC71;
   display: inherit;
-  margin-left: 200px;
+  margin-left:10px;
+  margin-top:10px;
+  margin-bottom:10px;
+/*  float:right;
+  margin-right:40px;*/
+
 }
+/*
+#edit_user a {
+
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #27AE60;
+  background-color:#2ECC71;
+  margin-rigth:200px;
+
+}*/
+
 
 #content.a{
   color: #fff;
@@ -81,7 +113,7 @@
   margin: 0;
   padding: 0;
 }
-      
+
 html, body{
   height: 100%;
   font-family: Calibri,sans-serif;
@@ -159,12 +191,20 @@ footer {
   color: #aaa;
 }
 
-/*for mainpage*/ 
+/*for mainpage*/
 #MainPage{
   //position: absolute;
-  width: 100%;
+  width: 20%;
   top: 0;
   padding-top: 30px;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #27AE60;
+  background-color:#2ECC71;
+  margin-left:230px;
+  margin-top:30px
 }
 
 #MainPage a{
@@ -172,6 +212,28 @@ footer {
   font-family: Calibri,sans-serif;
   color: white;
   font-size: 20px;
-  float: right;
-  padding-right: 100px;
+  align-content: center;
+
+
 }
+
+.form-input{
+
+  color:white;
+  text-align: left;
+
+}
+
+.form{
+  margin-left: 0px;
+  align-items: center;
+}
+  .form1{
+    margin-left: 240px;
+    align-items: center;
+  }
+
+  .form2{
+    margin-left:-150px;
+    align-items: center;
+  }
