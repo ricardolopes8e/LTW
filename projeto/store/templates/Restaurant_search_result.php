@@ -1,4 +1,4 @@
-<div class="detalhesRestauranteMainDiv">
+<div class="List-Restaurants">
 		<div class="tabContentGroup">
 			<div id="restaurantes" class="tabContent">
 
@@ -8,7 +8,7 @@
 					foreach($Result_restaurants as $ThisRestaurant)
 						{ ?>
 					
-					<div id="cadaRestaurante">
+					<div id="Restaurant">
 
 						<?php 
 						
