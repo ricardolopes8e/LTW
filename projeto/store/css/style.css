@@ -287,6 +287,7 @@ footer {
   font-size: 18px;
   margin-bottom: 20px;
   padding-left: 40px;
+  color:black;
 }
 
 /*For the username symbol in the login option*/
@@ -355,4 +356,57 @@ footer {
 
 }
 
+/*For the User profile page*/
 
+#see_user{
+  position: absolute;
+  top:0;
+  background-color: rgba(166, 174, 188,0.6);
+  margin-left: 450px;
+  margin-top: 200px;
+  height: 400px;
+  width: 500px;
+  border-radius: 10px;
+}
+
+#user_image{
+  border-radius: 270px;
+  margin-left: 170px;
+  margin-top: -90px;
+}
+
+#see_user header section{
+  font-family: Calibri,sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 100px;
+  margin-top: 25px;
+}
+
+#see_user header section h3{
+  margin-left: 30px;
+}
+
+#username{
+  font-family: Calibri,sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+#see_user li{
+  list-style-type: none;
+}
+
+#see_user li a{
+  text-decoration: none;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  border-bottom: 4px solid #27AE60;
+  background-color: #2ECC71;
+  display: inherit;
+  margin-left: 200px;
+  margin-top:7px;
+  padding-left: 5px;
+  width: 76px;
+}
