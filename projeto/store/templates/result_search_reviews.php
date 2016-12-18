@@ -53,6 +53,8 @@
   <li>Date:<?=$date?></li>
   <li>Rating:<?=$rating?></li>
   </ul>
+  
+  <li><a href="addReview.php?idRestaurant=<?=$_GET["idRestaurant"]?>">Add Review</a></li>
   </div>
 
 
