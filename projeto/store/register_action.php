@@ -18,36 +18,12 @@
 
   if (!$userResult) 
   {
-  	/* See if file for user photo is empty or not*/
-  	if(!empty($_FILES['FotoToUpload']['name']))
-  	{
-		$extention = pathinfo($_FILES["FotoToUpload"]["name"], PATHINFO_EXTENSION);
-		$size = getimagesize($_FILES["FotoToUpload"]["tmp_name"]);
+  
+		$idFoto= '12'; 
 		
-		if($size == false) {
-			exit("That file is not a image");
-		}
-		
-		if ($_FILES["FotoToUpload"]["size"] > 5000000) {
-			exit('File size is too big');
-		}
-		
-		$idFoto = getProxIdFoto();
-		$fotoName = $idFoto . '.' . $extention;
-		$FotoDest = "database/photos/" . $fotoName;
-		
-		move_uploaded_file($_FILES["FotoToUpload"]["tmp_name"], $FotoDest);
-		
-
-		$stml = $conn->prepare('INSERT INTO Foto (idFoto, fotoName) VALUES (?, ?)');
-   		$stml->execute(array($idFoto, $fotoName));
-		$stml->fetch(); 
-
-
 		$stml = $conn->prepare('INSERT INTO userFoto ( idFoto, username) VALUES (?, ?)');
-    	$stml->execute(array($idFoto, $user));
-		$stml->fetch(); 
-	}
+    	$stml->execute(array($idFoto, $username));
+
 	
 
 	$idDeLocalizacaoArray = $conn->prepare("SELECT MAX(idCity) FROM City");

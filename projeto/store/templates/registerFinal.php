@@ -13,9 +13,6 @@
 	  <div class="form-input">City:
         <input type="city" name="city" placeholder="City">
     </div>
-	  <div class="form-input">Foto:
-         <input type="file" name="FotoToUpload" id="fileToUpload">
-    </div>
     <div>
       <input type="Submit" name="submit" value="Submit" class="submit-button">
     </div>

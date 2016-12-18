@@ -18,7 +18,7 @@ CREATE TABLE RestaurantFoto(
 	idRestaurant INTEGER, 
 	FOREIGN KEY(idFoto) REFERENCES Foto(idFoto),
 	FOREIGN KEY(idRestaurant) REFERENCES Restaurant(idRestaurant),
-	PRIMARY KEY (idFoto)
+	PRIMARY KEY (idFoto, idRestaurant)
 	);
 
 INSERT INTO RestaurantFoto VALUES(1, 1); 
@@ -66,6 +66,7 @@ INSERT INTO Foto VALUES(8, 'img8.jpg');
 INSERT INTO Foto VALUES(9, 'img9.jpg');
 INSERT INTO Foto VALUES(10,'img10.jpg');
 INSERT INTO Foto VALUES(11,'img11.jpg');
+INSERT INTO Foto VALUES(12,'default.jpg');
 
 CREATE TABLE User(
 			username VARCHAR PRIMARY KEY,
@@ -82,7 +83,7 @@ CREATE TABLE UserFoto(
 			username VARCHAR, 
 			FOREIGN KEY(idFoto) REFERENCES Foto(idFoto),
 			FOREIGN KEY(username) REFERENCES User(username),
-			PRIMARY KEY (idFoto)
+			PRIMARY KEY (idFoto, username)
 			);
 
 INSERT INTO UserFoto VALUES(11, 'LuisCruz');
