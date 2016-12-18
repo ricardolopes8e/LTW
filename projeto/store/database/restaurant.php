@@ -8,15 +8,16 @@
 	return $stmtRests->fetchAll();
   }
   
-/*  Falta acrescentar na db e sql a tabela 
-function getRestaurant_photo($id_restaurant){
+function getProx_idRestaurant() {
 	global $conn;
-		$strft = "SELECT photo.descricao FROM photo, photo_restaurant WHERE photo_restaurant.id_restaurant = $id_restaurant AND photo_restaurant.id_photo = photo.id_photo";
-	    $stmtfoto = $conn->prepare($strft);
-		$stmtfoto->execute();
-		return $stmtfoto->fetchAll();
+	
+	$idR = $conn->prepare("SELECT MAX(idRestaurant) FROM Restaurant");
+    $idR->execute();
+	$idRes = $idR->fetch();
+	$idRestaurant =  $idRes["MAX(idRestaurant)"];
+	$idRestaurant++;
+	return $idRestaurant;
 }
-*/
 
 //obter todas as info de um restaurant com base no id
   function getRestaurant($restaurant_id) {
@@ -35,11 +36,11 @@ function getRestaurant_photo($id_restaurant){
       return $stmt->fetchAll();
     }
 //criar um restaurant
-    function createRestaurant($name,$description,$local, $imagePath, $id_owner) {
+    function createRestaurant($name,$owner,$timetable, $contact, $address) {
       global $conn;
 
-      $stmt = $conn->prepare('INSERT INTO restaurant( name, description, local, imagePath, id_owner) VALUES (?,?,?,?,?)');
-      $stmt->execute(array($name,$description,$local, $imagePath, $id_owner));
+      $stmt = $conn->prepare('INSERT INTO restaurant( name, owner, timetable, contact, address) VALUES (?,?,?,?,?)');
+      $stmt->execute(array($name,$owner,$timetable, $contact, $address));
       return $stmt->fetch();
     }
 //obter o id de um restaurant com base no nome 
