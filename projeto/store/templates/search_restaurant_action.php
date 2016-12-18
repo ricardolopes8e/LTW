@@ -24,7 +24,7 @@
 	$stmt->execute();
 	$Restaurant_city = $stmt->fetchAll();
  
-	include('templates/detalhesPesquisa.php');
+	include('templates/Restaurant_search_result.php');
   
   //header('Location: ' . '.php');  
 ?>
